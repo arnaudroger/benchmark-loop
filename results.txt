@@ -1,10 +1,10 @@
-Benchmark                        (size)   Mode  Cnt          Score         Error  Units
-LoopBenchmark.testBackwardLoop        1  thrpt  200  312986421.149 ± 2667902.870  ops/s
-LoopBenchmark.testBackwardLoop       10  thrpt  200  158405631.914 ±  598832.868  ops/s
-LoopBenchmark.testBackwardLoop     1000  thrpt  200    3690750.120 ±    4194.162  ops/s
-LoopBenchmark.testBackwardLoop  1000000  thrpt  200       3770.912 ±       3.712  ops/s
-LoopBenchmark.testForwardLoop         1  thrpt  200  328475585.696 ± 1444412.625  ops/s
-LoopBenchmark.testForwardLoop        10  thrpt  200  173986278.741 ± 2101407.243  ops/s
-LoopBenchmark.testForwardLoop      1000  thrpt  200    3719952.609 ±   10465.777  ops/s
-LoopBenchmark.testForwardLoop   1000000  thrpt  200       3772.734 ±       3.148  ops/s
-`
+Benchmark                        (size)   Mode  Cnt          Score        Error  Units
+LoopBenchmark.testBackwardLoop        1  thrpt  200  240665052.879 ± 677162.021  ops/s
+LoopBenchmark.testBackwardLoop       10  thrpt  200  146681879.385 ± 477011.056  ops/s
+LoopBenchmark.testBackwardLoop     1000  thrpt  200    3686316.628 ±   4270.291  ops/s
+LoopBenchmark.testBackwardLoop  1000000  thrpt  200       3761.607 ±      9.993  ops/s
+LoopBenchmark.testForwardLoop         1  thrpt  200  249774234.310 ± 326052.331  ops/s
+LoopBenchmark.testForwardLoop        10  thrpt  200  154017527.249 ± 457191.149  ops/s
+LoopBenchmark.testForwardLoop      1000  thrpt  200    3722753.790 ±  10607.034  ops/s
+LoopBenchmark.testForwardLoop   1000000  thrpt  200       3763.996 ±     10.405  ops/s
+
