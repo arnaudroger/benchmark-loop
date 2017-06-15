@@ -1,0 +1,155 @@
+# {method} {0x00007fec7adf5b00} 'testBackwardLoop' '()J' in 'io/github/arnaudroger/LoopBenchmark'
+#           [sp+0x30]  (sp of caller)
+[Entry Point]
+0x00007fec7d1e8620: mov 0x8(%rsi),%r10d
+0x00007fec7d1e8624: shl $0x3,%r10
+0x00007fec7d1e8628: cmp %r10,%rax
+0x00007fec7d1e862b: jne 0x00007fec7d045e20  ;   {runtime_call}
+0x00007fec7d1e8631: data16 xchg %ax,%ax
+0x00007fec7d1e8634: nopl 0x0(%rax,%rax,1)
+0x00007fec7d1e863c: data16 data16 xchg %ax,%ax
+[Verified Entry Point]
+0x00007fec7d1e8640: mov %eax,-0x14000(%rsp)
+0x00007fec7d1e8647: push %rbp
+0x00007fec7d1e8648: sub $0x20,%rsp  ;*synchronization entry
+                                    ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@-1 (line 72)
+0x00007fec7d1e864c: mov %rsi,%rcx
+0x00007fec7d1e864f: mov 0x10(%rsi),%r10d  ;*getfield numbers
+                                          ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@3 (line 73)
+0x00007fec7d1e8653: mov 0xc(%r12,%r10,8),%r8d  ;*arraylength
+                                               ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@6 (line 73)
+                                               ; implicit exception: dispatches to 0x00007fec7d1e8732
+0x00007fec7d1e8658: mov %r8d,%r9d
+0x00007fec7d1e865b: dec %r9d  ;*isub
+                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@8 (line 73)
+0x00007fec7d1e865e: xor %r11d,%r11d
+0x00007fec7d1e8661: test %r9d,%r9d
+0x00007fec7d1e8664: jl L0006  ;*iflt
+                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+0x00007fec7d1e866a: test %r8d,%r8d
+0x00007fec7d1e866d: jbe L0007
+0x00007fec7d1e8673: cmp %r8d,%r9d
+0x00007fec7d1e8676: jae L0007
+0x00007fec7d1e867c: add $0xfffffffe,%r8d
+0x00007fec7d1e8680: lea (%r12,%r10,8),%rdi  ;*lload_1
+                                            ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+             L0000: movslq 0x10(%rdi,%r9,4),%r10
+0x00007fec7d1e8689: add %r10,%r11  ;*ladd
+                                   ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@22 (line 74)
+0x00007fec7d1e868c: dec %r9d  ;*iinc
+                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@24 (line 73)
+0x00007fec7d1e868f: cmp %r8d,%r9d
+0x00007fec7d1e8692: jg L0000  ;*iflt
+                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+0x00007fec7d1e8694: cmp $0x6,%r9d
+0x00007fec7d1e8698: jle L0008
+0x00007fec7d1e869e: jmp L0002
+             L0001: mov %rax,%r11  ;*lload_1
+                                   ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+             L0002: movslq %r9d,%r10
+0x00007fec7d1e86a6: lea (%rdi,%r10,4),%r10  ;*iaload
+                                            ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@20 (line 74)
+0x00007fec7d1e86aa: movslq -0xc(%r10),%rax
+0x00007fec7d1e86ae: movslq 0x8(%r10),%r8
+0x00007fec7d1e86b2: movslq 0x10(%r10),%rcx
+0x00007fec7d1e86b6: movslq 0xc(%r10),%rbx
+0x00007fec7d1e86ba: add %r11,%rcx
+0x00007fec7d1e86bd: movslq 0x4(%r10),%r11
+0x00007fec7d1e86c1: add %rcx,%rbx
+0x00007fec7d1e86c4: movslq (%r10),%rcx
+0x00007fec7d1e86c7: add %r8,%rbx
+0x00007fec7d1e86ca: movslq -0x4(%r10),%r8
+0x00007fec7d1e86ce: add %rbx,%r11
+0x00007fec7d1e86d1: movslq -0x8(%r10),%r10
+0x00007fec7d1e86d5: add %r11,%rcx
+0x00007fec7d1e86d8: add %rcx,%r8
+0x00007fec7d1e86db: add %r8,%r10
+0x00007fec7d1e86de: add %r10,%rax  ;*ladd
+                                   ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@22 (line 74)
+0x00007fec7d1e86e1: add $0xfffffff8,%r9d  ;*iinc
+                                          ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@24 (line 73)
+0x00007fec7d1e86e5: cmp $0x6,%r9d
+0x00007fec7d1e86e9: jg L0001  ;*iflt
+                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+             L0003: cmp $0xffffffff,%r9d
+0x00007fec7d1e86ef: jle L0005
+0x00007fec7d1e86f1: data16 xchg %ax,%ax  ;*lload_1
+                                         ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+             L0004: movslq 0x10(%rdi,%r9,4),%r10
+0x00007fec7d1e86f9: add %r10,%rax  ;*ladd
+                                   ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@22 (line 74)
+0x00007fec7d1e86fc: dec %r9d  ;*iinc
+                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@24 (line 73)
+0x00007fec7d1e86ff: cmp $0xffffffff,%r9d
+0x00007fec7d1e8703: jg L0004  ;*iflt
+                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+             L0005: add $0x20,%rsp
+0x00007fec7d1e8709: pop %rbp
+0x00007fec7d1e870a: test %eax,0x1623c8f0(%rip)  # 0x00007fec93425000
+                                                ;   {poll_return} *** SAFEPOINT POLL ***
+0x00007fec7d1e8710: retq
+             L0006: xor %eax,%eax
+0x00007fec7d1e8713: jmp L0005
+             L0007: mov $0xffffff86,%esi
+0x00007fec7d1e871a: mov %r9d,%ebp
+0x00007fec7d1e871d: mov %rcx,(%rsp)
+0x00007fec7d1e8721: xchg %ax,%ax
+0x00007fec7d1e8723: callq 0x00007fec7d0051a0  ; OopMap{[0]=Oop off=264}
+                                              ;*lload_1
+                                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+                                              ;   {runtime_call}
+0x00007fec7d1e8728: callq 0x00007fec92131c50  ;*lload_1
+                                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+                                              ;   {runtime_call}
+             L0008: mov %r11,%rax
+0x00007fec7d1e8730: jmp L0003
+0x00007fec7d1e8732: mov $0xfffffff6,%esi
+0x00007fec7d1e8737: callq 0x00007fec7d0051a0  ; OopMap{off=284}
+                                              ;*arraylength
+                                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@6 (line 73)
+                                              ;   {runtime_call}
+0x00007fec7d1e873c: callq 0x00007fec92131c50  ;*arraylength
+                                              ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@6 (line 73)
+                                              ;   {runtime_call}
+0x00007fec7d1e8741: hlt
+0x00007fec7d1e8742: hlt
+0x00007fec7d1e8743: hlt
+0x00007fec7d1e8744: hlt
+0x00007fec7d1e8745: hlt
+0x00007fec7d1e8746: hlt
+0x00007fec7d1e8747: hlt
+0x00007fec7d1e8748: hlt
+0x00007fec7d1e8749: hlt
+0x00007fec7d1e874a: hlt
+0x00007fec7d1e874b: hlt
+0x00007fec7d1e874c: hlt
+0x00007fec7d1e874d: hlt
+0x00007fec7d1e874e: hlt
+0x00007fec7d1e874f: hlt
+0x00007fec7d1e8750: hlt
+0x00007fec7d1e8751: hlt
+0x00007fec7d1e8752: hlt
+0x00007fec7d1e8753: hlt
+0x00007fec7d1e8754: hlt
+0x00007fec7d1e8755: hlt
+0x00007fec7d1e8756: hlt
+0x00007fec7d1e8757: hlt
+0x00007fec7d1e8758: hlt
+0x00007fec7d1e8759: hlt
+0x00007fec7d1e875a: hlt
+0x00007fec7d1e875b: hlt
+0x00007fec7d1e875c: hlt
+0x00007fec7d1e875d: hlt
+0x00007fec7d1e875e: hlt
+0x00007fec7d1e875f: hlt
+[Exception Handler]
+[Stub Code]
+0x00007fec7d1e8760: jmpq 0x00007fec7d06c760  ;   {no_reloc}
+[Deopt Handler Code]
+0x00007fec7d1e8765: callq 0x00007fec7d1e876a
+0x00007fec7d1e876a: subq $0x5,(%rsp)
+0x00007fec7d1e876f: jmpq 0x00007fec7d0473c0  ;   {runtime_call}
+0x00007fec7d1e8774: hlt
+0x00007fec7d1e8775: hlt
+0x00007fec7d1e8776: hlt
+0x00007fec7d1e8777: hlt
