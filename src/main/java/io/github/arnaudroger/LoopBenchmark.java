@@ -32,6 +32,7 @@
 package io.github.arnaudroger;
 
 import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.CompilerControl;
 import org.openjdk.jmh.annotations.Param;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
@@ -56,6 +57,7 @@ public class LoopBenchmark {
     }
     
     @Benchmark
+    @CompilerControl(CompilerControl.Mode.DONT_INLINE)
     public long testForwardLoop() {
         long l = 0;
         for(int i = 0; i < numbers.length; i++) {
@@ -65,6 +67,7 @@ public class LoopBenchmark {
     }
 
     @Benchmark
+    @CompilerControl(CompilerControl.Mode.DONT_INLINE)
     public long testBackwardLoop() {
         long l = 0;
         for(int i = numbers.length - 1; i >=0; i--) {
