@@ -1,0 +1,21 @@
+Benchmark                                             (size)   Mode  Cnt          Score        Error  Units
+LoopBenchmark.testBackwardLoop                            10  thrpt   20  146585538.519 ± 567471.295  ops/s
+LoopBenchmark.testBackwardLoop:CPI                        10  thrpt               0.303                #/op
+LoopBenchmark.testBackwardLoop:L1-dcache-load-misses      10  thrpt               0.002                #/op
+LoopBenchmark.testBackwardLoop:L1-dcache-loads            10  thrpt              25.015                #/op
+LoopBenchmark.testBackwardLoop:L1-dcache-stores           10  thrpt               6.010                #/op
+LoopBenchmark.testBackwardLoop:L1-icache-load-misses      10  thrpt              ≈ 10⁻⁴                #/op
+LoopBenchmark.testBackwardLoop:LLC-load-misses            10  thrpt              ≈ 10⁻⁴                #/op
+LoopBenchmark.testBackwardLoop:LLC-loads                  10  thrpt              ≈ 10⁻⁴                #/op
+LoopBenchmark.testBackwardLoop:LLC-store-misses           10  thrpt              ≈ 10⁻⁵                #/op
+LoopBenchmark.testBackwardLoop:LLC-stores                 10  thrpt              ≈ 10⁻⁴                #/op
+LoopBenchmark.testBackwardLoop:branch-misses              10  thrpt              ≈ 10⁻⁴                #/op
+LoopBenchmark.testBackwardLoop:branches                   10  thrpt              16.011                #/op
+LoopBenchmark.testBackwardLoop:cycles                     10  thrpt              25.759                #/op
+LoopBenchmark.testBackwardLoop:dTLB-load-misses           10  thrpt              ≈ 10⁻⁴                #/op
+LoopBenchmark.testBackwardLoop:dTLB-loads                 10  thrpt              25.065                #/op
+LoopBenchmark.testBackwardLoop:dTLB-store-misses          10  thrpt              ≈ 10⁻⁶                #/op
+LoopBenchmark.testBackwardLoop:dTLB-stores                10  thrpt               6.009                #/op
+LoopBenchmark.testBackwardLoop:iTLB-load-misses           10  thrpt              ≈ 10⁻⁶                #/op
+LoopBenchmark.testBackwardLoop:iTLB-loads                 10  thrpt              ≈ 10⁻⁵                #/op
+LoopBenchmark.testBackwardLoop:instructions               10  thrpt              85.079                #/op
