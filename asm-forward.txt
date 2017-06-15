@@ -1,122 +1,114 @@
-# {method} {0x00007fda974fc9f0} 'testForwardLoop' '()J' in 'io/github/arnaudroger/LoopBenchmark'
+# {method} {0x00007f7cac4fc9f0} 'testForwardLoop' '()J' in 'io/github/arnaudroger/LoopBenchmark'
 #           [sp+0x20]  (sp of caller)
 [Entry Point]
-0x00007fdaa51ea720: mov 0x8(%rsi),%r10d
-0x00007fdaa51ea724: shl $0x3,%r10
-0x00007fdaa51ea728: cmp %r10,%rax
-0x00007fdaa51ea72b: jne 0x00007fdaa5045e20  ;   {runtime_call}
-0x00007fdaa51ea731: data16 xchg %ax,%ax
-0x00007fdaa51ea734: nopl 0x0(%rax,%rax,1)
-0x00007fdaa51ea73c: data16 data16 xchg %ax,%ax
+0x00007f7cad1df420: mov 0x8(%rsi),%r10d
+0x00007f7cad1df424: shl $0x3,%r10
+0x00007f7cad1df428: cmp %r10,%rax
+0x00007f7cad1df42b: jne 0x00007f7cad045e20  ;   {runtime_call}
+0x00007f7cad1df431: data16 xchg %ax,%ax
+0x00007f7cad1df434: nopl 0x0(%rax,%rax,1)
+0x00007f7cad1df43c: data16 data16 xchg %ax,%ax
 [Verified Entry Point]
-0x00007fdaa51ea740: mov %eax,-0x14000(%rsp)
-0x00007fdaa51ea747: push %rbp
-0x00007fdaa51ea748: sub $0x10,%rsp  ;*synchronization entry
+0x00007f7cad1df440: mov %eax,-0x14000(%rsp)
+0x00007f7cad1df447: push %rbp
+0x00007f7cad1df448: sub $0x10,%rsp  ;*synchronization entry
                                     ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@-1 (line 62)
-0x00007fdaa51ea74c: mov %rsi,%r10
-0x00007fdaa51ea74f: mov 0x10(%rsi),%r11d  ;*getfield numbers
+0x00007f7cad1df44c: mov %rsi,%r10
+0x00007f7cad1df44f: mov 0x10(%rsi),%r11d  ;*getfield numbers
                                           ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@6 (line 63)
-0x00007fdaa51ea753: mov 0xc(%r12,%r11,8),%ebx  ;*arraylength
+0x00007f7cad1df453: mov 0xc(%r12,%r11,8),%ebx  ;*arraylength
                                                ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@9 (line 63)
-                                               ; implicit exception: dispatches to 0x00007fdaa51ea829
-0x00007fdaa51ea758: test %ebx,%ebx
-0x00007fdaa51ea75a: jle L0004  ;*if_icmpge
+                                               ; implicit exception: dispatches to 0x00007f7cad1df509
+0x00007f7cad1df458: test %ebx,%ebx
+0x00007f7cad1df45a: jle L0004  ;*if_icmpge
                                ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@10 (line 63)
-0x00007fdaa51ea760: test %ebx,%ebx
-0x00007fdaa51ea762: jbe L0005
-0x00007fdaa51ea768: mov %ebx,%r9d
-0x00007fdaa51ea76b: dec %r9d
-0x00007fdaa51ea76e: cmp %ebx,%r9d
-0x00007fdaa51ea771: jae L0005  ;*lload_1
+0x00007f7cad1df460: test %ebx,%ebx
+0x00007f7cad1df462: jbe L0005
+0x00007f7cad1df468: mov %ebx,%r9d
+0x00007f7cad1df46b: dec %r9d
+0x00007f7cad1df46e: cmp %ebx,%r9d
+0x00007f7cad1df471: jae L0005  ;*lload_1
                                ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
-0x00007fdaa51ea777: movslq 0x10(%r12,%r11,8),%rax  ;*i2l
+0x00007f7cad1df477: movslq 0x10(%r12,%r11,8),%rax  ;*i2l
                                                    ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@20 (line 64)
-0x00007fdaa51ea77c: mov %ebx,%r10d
-0x00007fdaa51ea77f: add $0xfffffff9,%r10d
-0x00007fdaa51ea783: lea (%r12,%r11,8),%rsi
-0x00007fdaa51ea787: mov $0x80000000,%r11d
-0x00007fdaa51ea78d: cmp %r10d,%r9d
-0x00007fdaa51ea790: cmovl %r11d,%r10d
-0x00007fdaa51ea794: mov $0x1,%r8d
-0x00007fdaa51ea79a: cmp $0x1,%r10d
-0x00007fdaa51ea79e: jle L0001  ;*lload_1
+0x00007f7cad1df47c: mov %ebx,%r10d
+0x00007f7cad1df47f: add $0xfffffffd,%r10d
+0x00007f7cad1df483: shl $0x3,%r11
+0x00007f7cad1df487: mov $0x80000000,%r8d
+0x00007f7cad1df48d: cmp %r10d,%r9d
+0x00007f7cad1df490: cmovl %r8d,%r10d
+0x00007f7cad1df494: mov $0x1,%r8d
+0x00007f7cad1df49a: cmp $0x1,%r10d
+0x00007f7cad1df49e: jle L0001  ;*lload_1
                                ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
-             L0000: movslq 0x10(%rsi,%r8,4),%r11
-0x00007fdaa51ea7a5: add %rax,%r11
-0x00007fdaa51ea7a8: movslq %r8d,%r9
-0x00007fdaa51ea7ab: movslq 0x2c(%rsi,%r9,4),%rax
-0x00007fdaa51ea7b0: movslq 0x18(%rsi,%r9,4),%rcx
-0x00007fdaa51ea7b5: movslq 0x14(%rsi,%r9,4),%rdi
-0x00007fdaa51ea7ba: movslq 0x1c(%rsi,%r9,4),%rdx
-0x00007fdaa51ea7bf: movslq 0x28(%rsi,%r9,4),%rbp
-0x00007fdaa51ea7c4: movslq 0x20(%rsi,%r9,4),%r13
-0x00007fdaa51ea7c9: movslq 0x24(%rsi,%r9,4),%r9
-0x00007fdaa51ea7ce: add %r11,%rdi
-0x00007fdaa51ea7d1: add %rcx,%rdi
-0x00007fdaa51ea7d4: add %rdi,%rdx
-0x00007fdaa51ea7d7: add %rdx,%r13
-0x00007fdaa51ea7da: add %r13,%r9
-0x00007fdaa51ea7dd: add %r9,%rbp
-0x00007fdaa51ea7e0: add %rbp,%rax  ;*ladd
+             L0000: movslq 0x10(%r11,%r8,4),%r9
+0x00007f7cad1df4a5: add %rax,%r9
+0x00007f7cad1df4a8: movslq %r8d,%rcx
+0x00007f7cad1df4ab: movslq 0x1c(%r11,%rcx,4),%rax
+0x00007f7cad1df4b0: movslq 0x14(%r11,%rcx,4),%rdi
+0x00007f7cad1df4b5: movslq 0x18(%r11,%rcx,4),%rcx
+0x00007f7cad1df4ba: add %r9,%rdi
+0x00007f7cad1df4bd: add %rdi,%rcx
+0x00007f7cad1df4c0: add %rcx,%rax  ;*ladd
                                    ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@21 (line 64)
-0x00007fdaa51ea7e3: add $0x8,%r8d  ;*iinc
+0x00007f7cad1df4c3: add $0x4,%r8d  ;*iinc
                                    ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@23 (line 63)
-0x00007fdaa51ea7e7: cmp %r10d,%r8d
-0x00007fdaa51ea7ea: jl L0000  ;*if_icmpge
+0x00007f7cad1df4c7: cmp %r10d,%r8d
+0x00007f7cad1df4ca: jl L0000  ;*if_icmpge
                               ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@10 (line 63)
              L0001: cmp %ebx,%r8d
-0x00007fdaa51ea7ef: jge L0003
-0x00007fdaa51ea7f1: data16 xchg %ax,%ax  ;*lload_1
+0x00007f7cad1df4cf: jge L0003
+0x00007f7cad1df4d1: data16 xchg %ax,%ax  ;*lload_1
                                          ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
-             L0002: movslq 0x10(%rsi,%r8,4),%r10
-0x00007fdaa51ea7f9: add %r10,%rax  ;*ladd
+             L0002: movslq 0x10(%r11,%r8,4),%r10
+0x00007f7cad1df4d9: add %r10,%rax  ;*ladd
                                    ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@21 (line 64)
-0x00007fdaa51ea7fc: inc %r8d  ;*iinc
+0x00007f7cad1df4dc: inc %r8d  ;*iinc
                               ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@23 (line 63)
-0x00007fdaa51ea7ff: cmp %ebx,%r8d
-0x00007fdaa51ea802: jl L0002  ;*if_icmpge
+0x00007f7cad1df4df: cmp %ebx,%r8d
+0x00007f7cad1df4e2: jl L0002  ;*if_icmpge
                               ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@10 (line 63)
              L0003: add $0x10,%rsp
-0x00007fdaa51ea808: pop %rbp
-0x00007fdaa51ea809: test %eax,0x16c507f1(%rip)  # 0x00007fdabbe3b000
+0x00007f7cad1df4e8: pop %rbp
+0x00007f7cad1df4e9: test %eax,0x17b81b11(%rip)  # 0x00007f7cc4d61000
                                                 ;   {poll_return} *** SAFEPOINT POLL ***
-0x00007fdaa51ea80f: retq
+0x00007f7cad1df4ef: retq
              L0004: xor %eax,%eax
-0x00007fdaa51ea812: jmp L0003
+0x00007f7cad1df4f2: jmp L0003
              L0005: mov $0xffffff86,%esi
-0x00007fdaa51ea819: mov %r10,%rbp
-0x00007fdaa51ea81c: data16 xchg %ax,%ax
-0x00007fdaa51ea81f: callq 0x00007fdaa50051a0  ; OopMap{rbp=Oop off=260}
+0x00007f7cad1df4f9: mov %r10,%rbp
+0x00007f7cad1df4fc: data16 xchg %ax,%ax
+0x00007f7cad1df4ff: callq 0x00007f7cad0051a0  ; OopMap{rbp=Oop off=228}
                                               ;*lload_1
                                               ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
                                               ;   {runtime_call}
-0x00007fdaa51ea824: callq 0x00007fdabab47c50  ;*lload_1
+0x00007f7cad1df504: callq 0x00007f7cc3a6dc50  ;*lload_1
                                               ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
                                               ;   {runtime_call}
-0x00007fdaa51ea829: mov $0xfffffff6,%esi
-0x00007fdaa51ea82e: nop
-0x00007fdaa51ea82f: callq 0x00007fdaa50051a0  ; OopMap{off=276}
+0x00007f7cad1df509: mov $0xfffffff6,%esi
+0x00007f7cad1df50e: nop
+0x00007f7cad1df50f: callq 0x00007f7cad0051a0  ; OopMap{off=244}
                                               ;*arraylength
                                               ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@9 (line 63)
                                               ;   {runtime_call}
-0x00007fdaa51ea834: callq 0x00007fdabab47c50  ;*arraylength
+0x00007f7cad1df514: callq 0x00007f7cc3a6dc50  ;*arraylength
                                               ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@9 (line 63)
                                               ;   {runtime_call}
-0x00007fdaa51ea839: hlt
-0x00007fdaa51ea83a: hlt
-0x00007fdaa51ea83b: hlt
-0x00007fdaa51ea83c: hlt
-0x00007fdaa51ea83d: hlt
-0x00007fdaa51ea83e: hlt
-0x00007fdaa51ea83f: hlt
+0x00007f7cad1df519: hlt
+0x00007f7cad1df51a: hlt
+0x00007f7cad1df51b: hlt
+0x00007f7cad1df51c: hlt
+0x00007f7cad1df51d: hlt
+0x00007f7cad1df51e: hlt
+0x00007f7cad1df51f: hlt
 [Exception Handler]
 [Stub Code]
-0x00007fdaa51ea840: jmpq 0x00007fdaa506c760  ;   {no_reloc}
+0x00007f7cad1df520: jmpq 0x00007f7cad06c760  ;   {no_reloc}
 [Deopt Handler Code]
-0x00007fdaa51ea845: callq 0x00007fdaa51ea84a
-0x00007fdaa51ea84a: subq $0x5,(%rsp)
-0x00007fdaa51ea84f: jmpq 0x00007fdaa50473c0  ;   {runtime_call}
-0x00007fdaa51ea854: hlt
-0x00007fdaa51ea855: hlt
-0x00007fdaa51ea856: hlt
-0x00007fdaa51ea857: hlt
+0x00007f7cad1df525: callq 0x00007f7cad1df52a
+0x00007f7cad1df52a: subq $0x5,(%rsp)
+0x00007f7cad1df52f: jmpq 0x00007f7cad0473c0  ;   {runtime_call}
+0x00007f7cad1df534: hlt
+0x00007f7cad1df535: hlt
+0x00007f7cad1df536: hlt
+0x00007f7cad1df537: hlt
