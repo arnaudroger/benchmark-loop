@@ -1,0 +1,9 @@
+"Benchmark","Mode","Threads","Samples","Score","Score Error (99.9%)","Unit","Param: size"
+"io.github.arnaudroger.LoopBenchmark.testBackwardLoop","thrpt",1,200,312986421.149263,2667902.869539,"ops/s",1
+"io.github.arnaudroger.LoopBenchmark.testBackwardLoop","thrpt",1,200,158405631.914129,598832.868208,"ops/s",10
+"io.github.arnaudroger.LoopBenchmark.testBackwardLoop","thrpt",1,200,3690750.119665,4194.162381,"ops/s",1000
+"io.github.arnaudroger.LoopBenchmark.testBackwardLoop","thrpt",1,200,3770.912344,3.711770,"ops/s",1000000
+"io.github.arnaudroger.LoopBenchmark.testForwardLoop","thrpt",1,200,328475585.695994,1444412.624576,"ops/s",1
+"io.github.arnaudroger.LoopBenchmark.testForwardLoop","thrpt",1,200,173986278.740933,2101407.242595,"ops/s",10
+"io.github.arnaudroger.LoopBenchmark.testForwardLoop","thrpt",1,200,3719952.609301,10465.777370,"ops/s",1000
+"io.github.arnaudroger.LoopBenchmark.testForwardLoop","thrpt",1,200,3772.734149,3.147928,"ops/s",1000000
