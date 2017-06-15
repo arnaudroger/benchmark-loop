@@ -1,89 +1,90 @@
-C2, level 4, io.github.arnaudroger.LoopBenchmark::testForwardLoop, version 472 (175 bytes) 
+2, level 4, io.github.arnaudroger.LoopBenchmark::testBackwardLoop, version 463 (170 bytes) 
 
-                            # {method} {0x00007fa8ce11ddf0} &apos;testForwardLoop&apos; &apos;()J&apos; in &apos;io/github/arnaudroger/LoopBenchmark&apos;
-                            #           [sp+0x20]  (sp of caller)
-                            0x00007fa8d0bcd8a0: mov    0x8(%rsi),%r10d
-                            0x00007fa8d0bcd8a4: shl    $0x3,%r10
-                            0x00007fa8d0bcd8a8: cmp    %r10,%rax
-                            0x00007fa8d0bcd8ab: jne    0x00007fa8d0a0ce20  ;   {runtime_call}
-                            0x00007fa8d0bcd8b1: data16 xchg %ax,%ax
-                            0x00007fa8d0bcd8b4: nopl   0x0(%rax,%rax,1)
-                            0x00007fa8d0bcd8bc: data16 data16 xchg %ax,%ax
-                          [Verified Entry Point]
-  0.02%    0.04%            0x00007fa8d0bcd8c0: mov    %eax,-0x14000(%rsp)
-  3.69%    4.12%            0x00007fa8d0bcd8c7: push   %rbp
-  0.00%    0.01%            0x00007fa8d0bcd8c8: sub    $0x10,%rsp         ;*synchronization entry
-                                                                          ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@-1 (line 62)
-  0.25%    0.18%            0x00007fa8d0bcd8cc: mov    %rsi,%r10
-  3.59%    4.49%            0x00007fa8d0bcd8cf: mov    0x10(%rsi),%r11d   ;*getfield numbers
-                                                                          ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@6 (line 63)
-  0.00%    0.00%            0x00007fa8d0bcd8d3: mov    0xc(%r12,%r11,8),%ebx  ;*arraylength
-                                                                          ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@9 (line 63)
-                                                                          ; implicit exception: dispatches to 0x00007fa8d0bcd989
-  0.08%    0.09%            0x00007fa8d0bcd8d8: test   %ebx,%ebx
-                  ╭         0x00007fa8d0bcd8da: jle    0x00007fa8d0bcd970  ;*if_icmpge
-                  │                                                       ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@10 (line 63)
-  0.95%    1.21%  │         0x00007fa8d0bcd8e0: test   %ebx,%ebx
-                  │╭        0x00007fa8d0bcd8e2: jbe    0x00007fa8d0bcd974
-  3.26%    3.77%  ││        0x00007fa8d0bcd8e8: mov    %ebx,%r9d
-           0.00%  ││        0x00007fa8d0bcd8eb: dec    %r9d
-  0.14%    0.19%  ││        0x00007fa8d0bcd8ee: cmp    %ebx,%r9d
-                  ││╭       0x00007fa8d0bcd8f1: jae    0x00007fa8d0bcd974  ;*lload_1
-                  │││                                                     ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
-  1.25%    1.41%  │││       0x00007fa8d0bcd8f7: movslq 0x10(%r12,%r11,8),%rax  ;*i2l
-                  │││                                                     ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@20 (line 64)
-  2.74%    3.39%  │││       0x00007fa8d0bcd8fc: mov    %ebx,%r10d
-                  │││       0x00007fa8d0bcd8ff: add    $0xfffffffd,%r10d
-  0.05%    0.04%  │││       0x00007fa8d0bcd903: shl    $0x3,%r11
-  1.09%    1.38%  │││       0x00007fa8d0bcd907: mov    $0x80000000,%r8d
-  2.56%    3.29%  │││       0x00007fa8d0bcd90d: cmp    %r10d,%r9d
-  0.06%    0.05%  │││       0x00007fa8d0bcd910: cmovl  %r8d,%r10d
-  2.14%    2.57%  │││       0x00007fa8d0bcd914: mov    $0x1,%r8d
-  1.91%    2.00%  │││       0x00007fa8d0bcd91a: cmp    $0x1,%r10d
-                  │││╭      0x00007fa8d0bcd91e: jle    0x00007fa8d0bcd94c  ;*lload_1
-                  ││││                                                    ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
-  3.71%    3.16%  ││││↗     0x00007fa8d0bcd920: movslq 0x10(%r11,%r8,4),%r9
-  1.68%    1.46%  │││││     0x00007fa8d0bcd925: add    %rax,%r9
-  0.43%    0.38%  │││││     0x00007fa8d0bcd928: movslq %r8d,%rcx
-  2.12%    2.11%  │││││     0x00007fa8d0bcd92b: movslq 0x1c(%r11,%rcx,4),%rax
-  3.52%    3.02%  │││││     0x00007fa8d0bcd930: movslq 0x14(%r11,%rcx,4),%rdi
-  1.74%    1.14%  │││││     0x00007fa8d0bcd935: movslq 0x18(%r11,%rcx,4),%rcx
-  0.34%    0.52%  │││││     0x00007fa8d0bcd93a: add    %r9,%rdi
-  2.26%    1.86%  │││││     0x00007fa8d0bcd93d: add    %rdi,%rcx
-  3.85%    3.53%  │││││     0x00007fa8d0bcd940: add    %rcx,%rax          ;*ladd
-                  │││││                                                   ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@21 (line 64)
-  1.99%    1.70%  │││││     0x00007fa8d0bcd943: add    $0x4,%r8d          ;*iinc
-                  │││││                                                   ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@23 (line 63)
-  0.21%    0.32%  │││││     0x00007fa8d0bcd947: cmp    %r10d,%r8d
-                  ││││╰     0x00007fa8d0bcd94a: jl     0x00007fa8d0bcd920  ;*if_icmpge
-                  ││││                                                    ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@10 (line 63)
-  0.18%    0.15%  │││↘      0x00007fa8d0bcd94c: cmp    %ebx,%r8d
-                  │││  ╭    0x00007fa8d0bcd94f: jge    0x00007fa8d0bcd964
-  1.83%    0.86%  │││  │    0x00007fa8d0bcd951: data16 xchg %ax,%ax       ;*lload_1
-                  │││  │                                                  ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
-  2.19%    1.42%  │││  │↗   0x00007fa8d0bcd954: movslq 0x10(%r11,%r8,4),%r10
-  0.01%    0.00%  │││  ││   0x00007fa8d0bcd959: add    %r10,%rax          ;*ladd
-                  │││  ││                                                 ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@21 (line 64)
-  0.17%    0.15%  │││  ││   0x00007fa8d0bcd95c: inc    %r8d               ;*iinc
-                  │││  ││                                                 ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@23 (line 63)
-  1.78%    1.28%  │││  ││   0x00007fa8d0bcd95f: cmp    %ebx,%r8d
-                  │││  │╰   0x00007fa8d0bcd962: jl     0x00007fa8d0bcd954  ;*if_icmpge
-                  │││  │                                                  ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@10 (line 63)
-  2.08%    1.06%  │││  ↘ ↗  0x00007fa8d0bcd964: add    $0x10,%rsp
-  0.01%    0.01%  │││    │  0x00007fa8d0bcd968: pop    %rbp
-  0.18%    0.27%  │││    │  0x00007fa8d0bcd969: test   %eax,0x15f4a691(%rip)        # 0x00007fa8e6b18000
-                  │││    │                                                ;   {poll_return}
-  1.63%    0.98%  │││    │  0x00007fa8d0bcd96f: retq   
-                  ↘││    │  0x00007fa8d0bcd970: xor    %eax,%eax
-                   ││    ╰  0x00007fa8d0bcd972: jmp    0x00007fa8d0bcd964
-                   ↘↘       0x00007fa8d0bcd974: mov    $0xffffff86,%esi
-                            0x00007fa8d0bcd979: mov    %r10,%rbp
-                            0x00007fa8d0bcd97c: data16 xchg %ax,%ax
-                            0x00007fa8d0bcd97f: callq  0x00007fa8d09cc1a0  ; OopMap{rbp=Oop off=228}
-                                                                          ;*lload_1
-                                                                          ; - io.github.arnaudroger.LoopBenchmark::testForwardLoop@13 (line 64)
-                                                                          ;   {runtime_call}
-
-
-
-
+                             # {method} {0x00007fbab452df00} &apos;testBackwardLoop&apos; &apos;()J&apos; in &apos;io/github/arnaudroger/LoopBenchmark&apos;
+                             #           [sp+0x30]  (sp of caller)
+                             0x00007fbab51f4b60: mov    0x8(%rsi),%r10d
+                             0x00007fbab51f4b64: shl    $0x3,%r10
+                             0x00007fbab51f4b68: cmp    %r10,%rax
+                             0x00007fbab51f4b6b: jne    0x00007fbab5045e20  ;   {runtime_call}
+                             0x00007fbab51f4b71: data16 xchg %ax,%ax
+                             0x00007fbab51f4b74: nopl   0x0(%rax,%rax,1)
+                             0x00007fbab51f4b7c: data16 data16 xchg %ax,%ax
+                           [Verified Entry Point]
+  2.63%    2.28%             0x00007fbab51f4b80: mov    %eax,-0x14000(%rsp)
+  1.12%    0.91%             0x00007fbab51f4b87: push   %rbp
+  2.44%    1.14%             0x00007fbab51f4b88: sub    $0x20,%rsp         ;*synchronization entry
+                                                                           ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@-1 (line 72)
+  0.08%    0.13%             0x00007fbab51f4b8c: mov    %rsi,%r9
+  1.15%    0.69%             0x00007fbab51f4b8f: mov    0x10(%rsi),%r10d   ;*getfield numbers
+                                                                           ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@3 (line 73)
+  2.59%    0.88%             0x00007fbab51f4b93: mov    0xc(%r12,%r10,8),%r8d  ;*arraylength
+                                                                           ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@6 (line 73)
+                                                                           ; implicit exception: dispatches to 0x00007fbab51f4c4a
+  0.13%    0.12%             0x00007fbab51f4b98: mov    %r8d,%ecx
+  0.01%    0.01%             0x00007fbab51f4b9b: dec    %ecx               ;*isub
+                                                                           ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@8 (line 73)
+  1.28%    1.09%             0x00007fbab51f4b9d: xor    %r11d,%r11d
+  2.56%    0.64%             0x00007fbab51f4ba0: test   %ecx,%ecx
+                  ╭          0x00007fbab51f4ba2: jl     0x00007fbab51f4c2b  ;*iflt
+                  │                                                        ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+  0.11%    0.11%  │          0x00007fbab51f4ba8: test   %r8d,%r8d
+                  │╭         0x00007fbab51f4bab: jbe    0x00007fbab51f4c2f
+           0.01%  ││         0x00007fbab51f4bb1: cmp    %r8d,%ecx
+                  ││╭        0x00007fbab51f4bb4: jae    0x00007fbab51f4c2f
+  1.13%    1.47%  │││        0x00007fbab51f4bb6: add    $0xfffffffe,%r8d
+  2.61%    3.69%  │││        0x00007fbab51f4bba: shl    $0x3,%r10          ;*lload_1
+                  │││                                                      ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+  0.15%    0.10%  │││↗       0x00007fbab51f4bbe: movslq 0x10(%r10,%rcx,4),%r9
+  3.23%    3.31%  ││││       0x00007fbab51f4bc3: add    %r9,%r11           ;*ladd
+                  ││││                                                     ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@22 (line 74)
+  3.15%    3.23%  ││││       0x00007fbab51f4bc6: dec    %ecx               ;*iinc
+                  ││││                                                     ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@24 (line 73)
+  0.33%    0.42%  ││││       0x00007fbab51f4bc8: cmp    %r8d,%ecx
+                  │││╰       0x00007fbab51f4bcb: jg     0x00007fbab51f4bbe  ;*iflt
+                  │││                                                      ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+  0.11%    0.20%  │││        0x00007fbab51f4bcd: cmp    $0x2,%ecx
+                  │││        0x00007fbab51f4bd0: jle    0x00007fbab51f4c45
+                  │││ ╭      0x00007fbab51f4bd2: jmp    0x00007fbab51f4be3
+                  │││ │      0x00007fbab51f4bd4: nopl   0x0(%rax,%rax,1)
+                  │││ │      0x00007fbab51f4bdc: data16 data16 xchg %ax,%ax
+  0.11%           │││ │↗     0x00007fbab51f4be0: mov    %rax,%r11          ;*lload_1
+                  │││ ││                                                   ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+  3.41%    3.05%  │││ ↘│     0x00007fbab51f4be3: movslq 0x10(%r10,%rcx,4),%r8
+  4.46%    4.11%  │││  │     0x00007fbab51f4be8: movslq 0xc(%r10,%rcx,4),%r9
+  0.38%    0.43%  │││  │     0x00007fbab51f4bed: movslq 0x8(%r10,%rcx,4),%rbx
+  0.90%    0.96%  │││  │     0x00007fbab51f4bf2: movslq 0x4(%r10,%rcx,4),%rax
+  2.13%    2.54%  │││  │     0x00007fbab51f4bf7: add    %r11,%r8
+  5.53%    5.61%  │││  │     0x00007fbab51f4bfa: add    %r8,%r9
+  3.49%    4.52%  │││  │     0x00007fbab51f4bfd: add    %r9,%rbx
+  7.58%    7.83%  │││  │     0x00007fbab51f4c00: add    %rbx,%rax          ;*ladd
+                  │││  │                                                   ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@22 (line 74)
+  7.76%    8.00%  │││  │     0x00007fbab51f4c03: add    $0xfffffffc,%ecx   ;*iinc
+                  │││  │                                                   ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@24 (line 73)
+  0.03%    0.01%  │││  │     0x00007fbab51f4c06: cmp    $0x2,%ecx
+                  │││  ╰     0x00007fbab51f4c09: jg     0x00007fbab51f4be0  ;*iflt
+                  │││                                                      ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+                  │││        0x00007fbab51f4c0b: cmp    $0xffffffff,%ecx
+                  │││   ╭    0x00007fbab51f4c0e: jle    0x00007fbab51f4c1f  ;*lload_1
+                  │││   │                                                  ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)
+  0.10%           │││   │↗   0x00007fbab51f4c10: movslq 0x10(%r10,%rcx,4),%r11
+  3.64%    3.99%  │││   ││   0x00007fbab51f4c15: add    %r11,%rax          ;*ladd
+                  │││   ││                                                 ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@22 (line 74)
+  0.02%    0.01%  │││   ││   0x00007fbab51f4c18: dec    %ecx               ;*iinc
+                  │││   ││                                                 ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@24 (line 73)
+                  │││   ││   0x00007fbab51f4c1a: cmp    $0xffffffff,%ecx
+                  │││   │╰   0x00007fbab51f4c1d: jg     0x00007fbab51f4c10  ;*iflt
+                  │││   │                                                  ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@11 (line 73)
+  0.11%           │││   ↘ ↗  0x00007fbab51f4c1f: add    $0x20,%rsp
+  3.76%    3.74%  │││     │  0x00007fbab51f4c23: pop    %rbp
+  0.01%    0.01%  │││     │  0x00007fbab51f4c24: test   %eax,0x1805b3d6(%rip)        # 0x00007fbacd250000
+                  │││     │                                                ;   {poll_return}
+  0.03%    0.01%  │││     │  0x00007fbab51f4c2a: retq   
+                  ↘││     │  0x00007fbab51f4c2b: xor    %eax,%eax
+                   ││     ╰  0x00007fbab51f4c2d: jmp    0x00007fbab51f4c1f
+                   ↘↘        0x00007fbab51f4c2f: mov    $0xffffff86,%esi
+                             0x00007fbab51f4c34: mov    %ecx,%ebp
+                             0x00007fbab51f4c36: mov    %r9,(%rsp)
+                             0x00007fbab51f4c3a: nop
+                             0x00007fbab51f4c3b: callq  0x00007fbab50051a0  ; OopMap{[0]=Oop off=224}
+                                                                           ;*lload_1
+                                                                           ; - io.github.arnaudroger.LoopBenchmark::testBackwardLoop@14 (line 74)

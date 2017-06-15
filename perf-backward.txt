@@ -1,21 +1,23 @@
-Benchmark                                             (size)   Mode  Cnt          Score        Error  Units
-LoopBenchmark.testBackwardLoop                            10  thrpt   20  146585538.519 ± 567471.295  ops/s
-LoopBenchmark.testBackwardLoop:CPI                        10  thrpt               0.303                #/op
-LoopBenchmark.testBackwardLoop:L1-dcache-load-misses      10  thrpt               0.002                #/op
-LoopBenchmark.testBackwardLoop:L1-dcache-loads            10  thrpt              25.015                #/op
-LoopBenchmark.testBackwardLoop:L1-dcache-stores           10  thrpt               6.010                #/op
-LoopBenchmark.testBackwardLoop:L1-icache-load-misses      10  thrpt              ≈ 10⁻⁴                #/op
-LoopBenchmark.testBackwardLoop:LLC-load-misses            10  thrpt              ≈ 10⁻⁴                #/op
-LoopBenchmark.testBackwardLoop:LLC-loads                  10  thrpt              ≈ 10⁻⁴                #/op
-LoopBenchmark.testBackwardLoop:LLC-store-misses           10  thrpt              ≈ 10⁻⁵                #/op
-LoopBenchmark.testBackwardLoop:LLC-stores                 10  thrpt              ≈ 10⁻⁴                #/op
-LoopBenchmark.testBackwardLoop:branch-misses              10  thrpt              ≈ 10⁻⁴                #/op
-LoopBenchmark.testBackwardLoop:branches                   10  thrpt              16.011                #/op
-LoopBenchmark.testBackwardLoop:cycles                     10  thrpt              25.759                #/op
-LoopBenchmark.testBackwardLoop:dTLB-load-misses           10  thrpt              ≈ 10⁻⁴                #/op
-LoopBenchmark.testBackwardLoop:dTLB-loads                 10  thrpt              25.065                #/op
-LoopBenchmark.testBackwardLoop:dTLB-store-misses          10  thrpt              ≈ 10⁻⁶                #/op
-LoopBenchmark.testBackwardLoop:dTLB-stores                10  thrpt               6.009                #/op
-LoopBenchmark.testBackwardLoop:iTLB-load-misses           10  thrpt              ≈ 10⁻⁶                #/op
-LoopBenchmark.testBackwardLoop:iTLB-loads                 10  thrpt              ≈ 10⁻⁵                #/op
-LoopBenchmark.testBackwardLoop:instructions               10  thrpt              85.079                #/op
+Perf stats:
+--------------------------------------------------
+
+      19410.999746      task-clock (msec)         #    0.481 CPUs utilized          
+               593      context-switches          #    0.031 K/sec                  
+                14      cpu-migrations            #    0.001 K/sec                  
+               129      page-faults               #    0.007 K/sec                  
+    72,752,704,564      cycles                    #    3.748 GHz                      (30.81%)
+   240,433,938,972      instructions              #    3.30  insn per cycle           (38.54%)
+    45,226,411,529      branches                  # 2329.937 M/sec                    (38.60%)
+         1,344,845      branch-misses             #    0.00% of all branches          (38.62%)
+    70,922,255,627      L1-dcache-loads           # 3653.715 M/sec                    (38.41%)
+         2,027,471      L1-dcache-load-misses     #    0.00% of all L1-dcache hits    (15.51%)
+           373,046      LLC-loads                 #    0.019 M/sec                    (15.74%)
+            23,798      LLC-load-misses           #   12.76% of all LL-cache hits     (23.59%)
+   <not supported>      L1-icache-loads                                             
+           639,080      L1-icache-load-misses                                         (31.44%)
+    69,451,416,801      dTLB-loads                # 3577.941 M/sec                    (31.33%)
+            18,639      dTLB-load-misses          #    0.00% of all dTLB cache hits   (15.84%)
+            15,814      iTLB-loads                #    0.815 K/sec                    (15.84%)
+             3,519      iTLB-load-misses          #   22.25% of all iTLB cache hits   (23.76%)
+   <not supported>      L1-dcache-prefetches                                        
+   <not supported>      L1-dcache-prefetch-misses  
